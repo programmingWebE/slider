@@ -1,0 +1,392 @@
+.portfolio {
+	position: relative;
+	z-index: 5;
+	background-color: #fff;
+	padding-bottom: 75px;
+}
+
+.portfolio__wrap {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 30px;
+}
+
+.portfolio__item {
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	display: block;
+	width: calc(100% / 3);
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 400px;
+	transition-delay: .05s;
+}
+
+.portfolio__item:after {
+	position: absolute;
+	content: ' ';
+	width: 1px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transition: 0.3s background-color;
+}
+
+.portfolio__item:hover:after {
+	width: 100%;
+	background: rgba(0, 0, 0, 0.9);
+	animation: hide 1s forwards;
+	transition: 0.4s linear;
+}
+
+.portfolio__item:hover img {
+	filter: none;
+	transform: translateX(-20px);
+}
+
+.portfolio__item:hover .portfolio__label,
+.portfolio__item:hover .portfolio__title,
+.portfolio__item:hover .portfolio__desc,
+.portfolio__item:hover .portfolio__count {
+	opacity: 1;
+	transform: translateX(0%);
+}
+
+.portfolio__item:hover .portfolio__icon i {
+	opacity: 1;
+	animation: swing 1s linear forwards;
+}
+
+.portfolio__image {
+	position: absolute;
+	content: ' ';
+	top: 0px;
+	left: 0px;
+	width: calc(100% + 40px);
+	height: 100%;
+}
+
+.portfolio__image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale(100%);
+	transition: 0.3s filter, 0.3s transform;
+}
+
+.portfolio__block {
+	position: relative;
+	z-index: 5;
+	padding: 20px;
+}
+
+.portfolio__icon {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 34px;
+}
+
+.portfolio__icon i {
+	display: block;
+	width: 100%;
+	color: #fff;
+	opacity: 0;
+	font: normal normal normal 34px/1 'nc-icon-outline';
+	transition: 0.34s linear;
+	transform-origin: 50% top;
+	transition-delay: 0.2s;
+}
+
+.portfolio__label {
+	display: inline-block;
+	font-size: 10px;
+	color: #fff;
+	background-color: #68bec4;
+	text-transform: uppercase;
+	padding: 7px 9px;
+	margin-bottom: 64px;
+	transform: scale(1.1);
+	opacity: 0;
+	transform: translateX(-100%);
+	font-weight: 600;
+	transition: all 0.2s ease-in;
+}
+
+.portfolio__title,
+.portfolio__desc,
+.portfolio__count {
+	color: #fff;
+	text-align: center;
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: 0.3s opacity, 0.3s transform;
+}
+
+.portfolio__title {
+	font-size: 16px;
+	line-height: 1.35;
+	font-weight: 600;
+	margin-bottom: 12px;
+	transition-delay: 0.17s;
+}
+
+.portfolio__desc {
+	padding-bottom: 30px;
+	transition-delay: 0.15s;
+}
+
+.portfolio__desc p {
+	font-size: 13px;
+	line-height: 1.6;
+	color: #fff;
+	font-weight: 300;
+}
+
+.portfolio__count {
+	font-size: 16px;
+	line-height: 1.58;
+	color: #fff;
+	transition-delay: 0.45s;
+	font-weight: 300;
+}
+
+.portfolio__count span {
+	padding-right: 5px;
+}
+
+.portfolio--page {
+	padding-top: 78px;
+	padding-bottom: 70px;
+}
+
+.portfolio--page .portfolio__wrap {
+	margin: 0 -3px;
+}
+
+.portfolio--page .portfolio__item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 3 - 6px);
+	margin: 0 3px;
+	margin-bottom: 6px;
+}
+
+.portfolio__name {
+	font-size: 20px;
+	line-height: 1.3;
+	color: #20202c;
+	letter-spacing: 0.8px;
+	text-align: center;
+	padding-bottom: 25px;
+	font-weight: 800;
+}
+
+.portfolio__place {
+	font-size: 14px;
+	line-height: 1.6;
+	color: #686868;
+	text-align: center;
+	padding-bottom: 25px;
+	font-weight: 300;
+}
+
+.portfolio--about {
+	padding-top: 70px;
+	padding-bottom: 40px;
+}
+
+.gallery .lg-outer .lg-thumb-item {
+	border: none;
+	border-radius: 0px;
+	outline: none;
+	transition: 0.3s opacity;
+}
+
+.gallery .lg-outer .lg-thumb-item.active {
+	opacity: 0.2;
+}
+
+.gallery .lg-outer .lg-thumb-item:hover {
+	opacity: 0.2;
+}
+
+.gallery .lg-outer .lg-prev:after,
+.gallery .lg-outer .lg-next:before {
+	position: relative;
+	color: #fff;
+	font-size: 12px;
+	top: -4px;
+	font-family: 'nc-icon-mini';
+	transition: 0.3s color;
+}
+
+.gallery .lg-outer .lg-prev:after {
+	content: '\e903';
+}
+
+.gallery .lg-outer .lg-prev:hover {
+	background-color: #fff;
+}
+
+.gallery .lg-outer .lg-prev:hover:after {
+	color: #68bec4;
+}
+
+.gallery .lg-outer .lg-next:before {
+	content: '\e904';
+}
+
+.gallery .lg-outer .lg-next:hover {
+	background-color: #fff;
+}
+
+.gallery .lg-outer .lg-next:hover:before {
+	color: #68bec4;
+}
+
+.gallery .lg-prev,
+.gallery .lg-next {
+	width: 44px;
+	height: 44px;
+	background-color: #68bec4;
+	border-radius: 50%;
+	transition: 0.3s background-color;
+}
+
+.gallery .lg-progress-bar .lg-progress {
+	background-color: #68bec4;
+}
+
+.gallery .lg-group {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	margin-top: 5px;
+}
+
+.gallery .lg-toolbar .lg-icon {
+	display: block;
+	float: none;
+	width: 14px;
+	font-size: 14px;
+	margin: 0 8px;
+	color: #fff;
+}
+
+.gallery .lg-toolbar .lg-icon:hover {
+	color: #68bec4;
+}
+
+.gallery .lg-img-wrap {
+	padding: 0 5px;
+}
+
+.gallery .lg-outer .lg-icon {
+	font-family: 'nc-icon-mini' !important;
+}
+
+.gallery .lg-outer .lg-icon.lg-fullscreen:after {
+	content: '\ea83';
+}
+
+.gallery .lg-outer .lg-icon.lg-download:after {
+	content: '\e95d';
+}
+
+.gallery .lg-outer .lg-icon.lg-close:after {
+	content: '\ea18';
+}
+
+.gallery .lg-outer .lg-icon.lg-autoplay-button:after {
+	content: '\ec0f';
+}
+
+.gallery .lg-outer .lg-thumb-outer {
+	background-color: transparent;
+}
+
+.gallery .lg-backdrop {
+	background-color: rgba(32, 32, 44, 0.85);
+}
+
+@media screen and (max-width: 1199px) {
+
+.portfolio__name {
+	font-size: 15px;
+}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+.portfolio__item {
+	width: calc(100% / 2);
+}
+
+.portfolio--page .portfolio__item {
+	width: calc(100% / 2 - 6px);
+}
+
+}
+
+@media screen and (max-width: 780px) {
+
+.portfolio__item {
+	width: 100%;
+}
+
+.portfolio--page .portfolio__wrap {
+	margin: 0px;
+}
+
+.portfolio--page .portfolio__item {
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 6px;
+}
+
+}
+
+@keyframes swing {
+
+0% {
+	transform: rotate(-30deg);
+}
+
+30% {
+	transform: rotate(30deg);
+}
+
+50% {
+	transform: rotate(-20deg);
+}
+
+70% {
+	transform: rotate(20deg);
+}
+
+100% {
+	transform: rotate(0deg);
+}
+
+}
+
+@keyframes hide {
+
+0% {
+	opacity: 1;
+}
+
+100% {
+	opacity: 0;
+}
+
+}
+

@@ -1,0 +1,141 @@
+.info__wrap .slick-slide img {
+	display: block;
+}
+
+.info__wrap .container {
+	transform: translate(0, 50px);
+	opacity: 0;
+}
+
+.info__wrap .slick-active .container {
+	animation: view 0.3s linear forwards;
+	animation-delay: 0.6s;
+}
+
+.info__item {
+	height: 100%;
+}
+
+.info__bg {
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	height: 100%;
+	padding-top: 165px;
+	padding-bottom: 170px;
+}
+
+.info__bg img {
+	width: 100%;
+	height: 100%;
+	margin-top: -220px;
+}
+
+.info__subtitle {
+	font-size: 90px;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: 800;
+}
+
+.info__subtitle span {
+	display: block;
+	font-size: 36px;
+	letter-spacing: 6px;
+	text-transform: uppercase;
+	padding-bottom: 12px;
+	font-weight: 300;
+}
+
+.info__desc {
+	text-align: center;
+}
+
+.info__desc p {
+	font-size: 18px;
+	line-height: 2;
+	letter-spacing: 1.8px;
+	color: #fff;
+	padding-bottom: 1.8em;
+	font-weight: 300;
+}
+
+.info__dots-list {
+	position: absolute;
+	bottom: 90px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.info__dots-list li {
+	cursor: pointer;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.info__dots-list li:not(:last-child) {
+	margin-right: 15px;
+}
+
+.info__dots-list li button {
+	cursor: pointer;
+	font-size: 0px;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	padding: 0px;
+	border-radius: 50%;
+	background-color: transparent;
+}
+
+.info__dots-list li.slick-active {
+	width: 13px;
+	height: 13px;
+	background-color: #68bec1;
+}
+
+@media screen and (max-width: 1050px) {
+
+.info__subtitle {
+	font-size: 55px;
+}
+
+}
+
+@media screen and (max-width: 780px) {
+
+.info__subtitle {
+	font-size: 33px;
+}
+
+.info__subtitle span {
+	font-size: 30px;
+}
+
+.info__desc p {
+	font-size: 15px;
+}
+
+}
+
+@keyframes view {
+
+100% {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+
+}
+
