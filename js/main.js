@@ -34,7 +34,7 @@ $(document).ready(function() {
   $(".info__item").height(mh);
   }
 
-  maxHeight();
+  //maxHeight();
 
   $(document).on('scroll', function() {
     $('.btn-scroll').toggleClass('btn-scroll--active', pageYOffset > 100);
